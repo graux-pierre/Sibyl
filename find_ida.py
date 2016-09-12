@@ -25,7 +25,7 @@ from sibyl.test import AVAILABLE_TESTS
 
 # Find SIBYL find.py
 cur_script = sys.argv[0]
-identify_binary = os.path.join(os.path.dirname(cur_script), "find.py")
+identify_binary = os.path.join(os.path.dirname(cur_script), "cli.py")
 env = os.environ
 
 # Sibyl launching
@@ -110,7 +110,7 @@ def launch_on_funcs(architecture, abi, funcs, test_set, map_addr=None,
     for i in xrange(0, len(funcs), buf_size):
         # Build command line
         addresses = funcs[i:i + buf_size]
-        command_line = ["python", identify_binary]
+        command_line = ["python", identify_binary, "find"]
         command_line += options
         command_line += [filename, abi]
         command_line += addresses

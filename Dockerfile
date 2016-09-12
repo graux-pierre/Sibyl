@@ -30,4 +30,4 @@ RUN cd /opt &&\
 WORKDIR /opt/Sibyl
 USER miasm2
 
-CMD ["/usr/bin/python", "find.py", "-h"]
+CMD ["/usr/bin/python", "cli.py", "find", "-h"]

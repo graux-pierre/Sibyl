@@ -82,7 +82,7 @@ for c_file in c_files:
     if not args.arch_heuristic:
         options += ["-a", "x86_32"]
 
-    cmd = ["python", "../find.py"] + options + [filename, "ABIStdCall_x86_32"]
+    cmd = ["python", "../cli.py", "find"] + options + [filename, "ABIStdCall_x86_32"]
     if not args.func_heuristic:
         cmd += [hex(addr) for addr, f in to_check]
     print " ".join(cmd)
